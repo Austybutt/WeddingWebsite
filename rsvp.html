@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><title>RSVP</title><script>
+function checkPassword() {
+  const password = prompt("Enter the RSVP password:");
+  if (password !== "Tacos") {
+    alert("Wrong password. Try again!");
+    window.location.href = "/";
+  }
+}
+window.onload = checkPassword;
+</script></head><body><nav><a href='index.html'>Home</a></nav><h1>RSVP</h1><p><a href='https://docs.google.com/forms/d/YOUR-FORM-ID' target='_blank'>Click here to RSVP via Google Form</a></p></body></html>
