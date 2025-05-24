@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ – Aryn & Austin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: #f7f7f7;
+    }
+    .faq-container {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #ffffffdd;
+      padding: 20px 30px;
+      border-radius: 10px;
+    }
+    .faq-category {
+      margin-bottom: 50px;
+    }
+    .faq-category h2 {
+      font-size: 1.6rem;
+      color: #2f3e46;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .accordion {
+      background-color: #ffffff;
+      color: #2f3e46;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #ccc;
+      transition: 0.3s;
+    }
+    .active, .accordion:hover {
+      background-color: #f1f1f1;
+    }
+    .panel {
+      padding: 0 15px;
+      display: none;
+      background-color: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid #ddd;
+      font-size: 1rem;
+      color: #2f3e46;
+    }
+  </style>
+</head>
+<body>
+<nav style="background: #2f3e46; padding: 20px 0; text-align: center;">
+  <div style="max-width: 1000px; margin: auto;">
+    <a href="home.html" style="color:white; text-decoration: underline; font-size: 1.5rem; font-family: 'Playfair Display', serif; margin-right: 30px;">Aryn & Austin</a>
+    <a href="home.html" style="color:white; margin: 0 15px;">Home</a>
+    <a href="our-wedding.html" style="color:white; margin: 0 15px;">Our Wedding</a>
+    <a href="itinerary.html" style="color:white; margin: 0 15px;">Itinerary</a>
+    <a href="travel-suggestions.html" style="color:white; margin: 0 15px;">Travel Suggestions</a>
+    <a href="gallery.html" style="color:white; margin: 0 15px;">Gallery</a>
+    <a href="form.html" style="color:white; margin: 0 15px;">RSVP</a>
+    <a href="faq.html" style="color:white; margin: 0 15px;">FAQ</a>
+  </div>
+</nav>
+
+<div class="faq-container fade-in-up delay-2">
+  <div class="faq-category">
+    <h2>🧳 Travel</h2>
+    <button class="accordion">What’s the weather like in CDMX?</button>
+    <div class="panel"><p>Sunny and dry! Around 77°F (25°C) by day, 50°F (10°C) by night. Layer up!</p></div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  <div class="faq-category">
+    <h2>📋 Logistics</h2>
+    <button class="accordion">Do I need a passport or visa?</button>
+    <div class="panel"><p>Guests from the US need a valid passport (no visa required). Ensure your passport won’t expire within 6 months of travel.</p></div>
+
+    <button class="accordion">Can I bring a +1?</button>
+    <div class="panel"><p>Only those named on your invitation are included in our guest list. Thanks for understanding.</p></div>
+
+    <button class="accordion">Are kids allowed?</button>
+    <div class="panel"><p>We love your little ones, but our wedding is an adults-only celebration. Enjoy your time off!</p></div>
+
+    <button class="accordion">Will there be transportation to the wedding?</button>
+    <div class="panel"><p>Yes! Shuttles will depart from Roma, Condesa, and Polanco hotels at 4 PM and return until 2 AM.</p></div>
+  </div>
+
+  <div class="faq-category">
+    <h2>🥂 Wedding Details</h2>
+    <button class="accordion">What day should I arrive in Mexico City?</button>
+    <div class="panel"><p>If you plan to attend the Welcome Party, arrive Friday, January 30. We’ll celebrate all weekend!</p></div>
+
+    <button class="accordion">Wedding after party?</button>
+    <div class="panel"><p>Yes! We'll continue the celebration Saturday night. Details coming soon!</p></div>
+
+    
+  </div>
+</div>
+
+<footer>
+  <p style="text-align:center; padding: 30px 10px;">With love from Aryn & Austin — We can't wait to celebrate with you 💚</p>
+</footer>
+
+<script>
+  const acc = document.querySelectorAll(".accordion");
+  acc.forEach(button => {
+    button.addEventListener("click", function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
+</body>
+</html>

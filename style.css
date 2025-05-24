@@ -1,0 +1,221 @@
+
+
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    background-color: #1e2d27;
+    background-image: url('images/floral-wallpaper.png');
+    background-repeat: repeat;
+    background-size: 500px;
+    color: #2f3e46;
+    scroll-behavior: smooth;
+}
+.hero {
+    background: #ffffff;
+    border: 6px double #a3c9a8;
+    border-radius: 16px;
+    margin: 80px auto;
+    max-width: 800px;
+    text-align: center;
+    padding: 80px 40px;
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/leaf.png');
+    background-size: cover;
+    background-repeat: repeat;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #2f3e46;
+    margin: 0;
+}
+.hero h1 span {
+    display: block;
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+    margin-top: 5px;
+}
+.hero p {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 20px;
+    color: #5c6b73;
+}
+.hero .rsvp-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #2f3e46;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+.hero .rsvp-button:hover {
+    background: #4f5e66;
+}
+section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: #f8f9f9;
+    border: 3px solid #d8e3dc;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #3e4e50;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #cbd5d8;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+button {
+    background: #2f3e46;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+button:hover {
+    background: #4f5e66;
+}
+
+/* Decorative corners using SVGs */
+.corner {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+    opacity: 0.7;
+}
+.corner.top-left {
+    top: 0;
+    left: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2013/07/12/12/58/leaf-145022_960_720.png');
+}
+.corner.top-right {
+    top: 0;
+    right: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2013/07/12/12/58/leaf-145022_960_720.png');
+    transform: scaleX(-1);
+}
+.corner.bottom-left {
+    bottom: 0;
+    left: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2013/07/12/12/58/leaf-145022_960_720.png');
+    transform: scaleY(-1);
+}
+.corner.bottom-right {
+    bottom: 0;
+    right: 0;
+    background-image: url('https://cdn.pixabay.com/photo/2013/07/12/12/58/leaf-145022_960_720.png');
+    transform: scale(-1, -1);
+}
+
+/* Footer */
+footer {
+    background: #a3c9a8;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    color: white;
+    font-style: italic;
+    position: relative;
+}
+
+/* Responsive Navigation */
+nav {
+    background: #2f3e46;
+    padding: 10px;
+}
+nav .nav-container {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+nav .links {
+    display: flex;
+    gap: 20px;
+}
+nav .links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Playfair Display', serif;
+}
+nav .menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+@media screen and (max-width: 768px) {
+    nav .links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #2f3e46;
+        margin-top: 10px;
+    }
+    nav .links.active {
+        display: flex;
+    }
+    nav .menu {
+        display: flex;
+    }
+}
+
+/* Gallery Image Layout */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.images img {
+    width: 30%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
