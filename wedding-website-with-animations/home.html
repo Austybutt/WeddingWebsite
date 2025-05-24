@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home – ❤️ Aryn & Austin ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+nav {
+    background: #2f3e46;
+    text-align: center;
+    padding: 20px 0;
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #a3c9a8;
+}
+</style>
+</head>
+<body>
+
+
+
+<nav style="background: #2f3e46; padding: 20px 0; text-align: center;">
+  <div style="max-width: 1000px; margin: auto;">
+    <a href="home.html" style="color:white; text-decoration: underline; font-size: 1.5rem; font-family: 'Playfair Display', serif; margin-right: 30px;">Aryn & Austin</a>
+    <a href="home.html" style="color:white; margin: 0 15px;">Home</a>
+    <a href="our-wedding.html" style="color:white; margin: 0 15px;">Our Wedding</a>
+    <a href="itinerary.html" style="color:white; margin: 0 15px;">Itinerary</a>
+    <a href="travel-suggestions.html" style="color:white; margin: 0 15px;">Travel Suggestions</a>
+    <a href="gallery.html" style="color:white; margin: 0 15px;">Gallery</a>
+    <a href="form.html" style="color:white; margin: 0 15px;">RSVP</a>
+    <a href="faq.html" style="color:white; margin: 0 15px;">FAQ</a>
+  </div>
+</nav>
+    
+        <header class="hero">
+            <h1>ARYN & AUSTIN</h1>
+<p>January 31st, 2026 · Mexico City</p>
+            <div id="countdown"></div>
+            <a href="form.html" class="rsvp-button">RSVP</a>
+        </header>
+        <script>
+            const countdown = document.getElementById("countdown");
+            const weddingDate = new Date("January 31, 2026 17:00:00").getTime();
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+                if (distance < 0) {
+            countdown.innerHTML = `<h3 style="font-family: 'Playfair Display', serif;">${days}d ${hours}h ${minutes}m ${seconds}s until the party 🎊</h3>`;
+                    return;
+                }
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdown.innerHTML = `<h3 style="font-family: 'Playfair Display', serif;">${days}d ${hours}h ${minutes}m ${seconds}s until the party 🎊</h3>`;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        </script>
+    
+    <footer>
+        With love from Aryn & Austin — We can't wait to celebrate with you 💚
+    </footer>
+</body>
+</html>
