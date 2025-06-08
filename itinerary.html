@@ -4,165 +4,181 @@
   <meta charset="UTF-8">
   <title>Itinerary – Aryn & Austin</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <style>
-    .itinerary-container {
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background: url('floral-wallpaper.png') repeat;
+      background-size: cover;
+      color: #2f3e46;
+    }
+
+    .timeline-container {
       max-width: 900px;
       margin: 60px auto;
-      font-family: 'Playfair Display', serif;
+      padding: 20px;
       background: #ffffffdd;
-      padding: 30px;
       border-radius: 10px;
     }
-    .day {
-      border-left: 3px solid #2f3e46;
-      padding-left: 20px;
-      margin-bottom: 50px;
+
+    .timeline-day {
+      margin-bottom: 60px;
     }
-    .day h3 {
-      color: #2f3e46;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+
+    .timeline-date {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #2f3e46;
+      padding-bottom: 10px;
     }
-    .day h2 {
-      color: #2f3e46;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-    .event {
+
+    .timeline-event {
       display: flex;
-      gap: 30px;
-      margin-bottom: 30px;
+      flex-direction: row;
+      gap: 20px;
+      background: #fff;
+      border-left: 4px solid #2f3e46;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
     }
-    .event-left {
-      min-width: 180px;
-      color: #2f3e46;
-    }
-    .event-right {
-      color: #2f3e46;
-    }
-    .event-title {
+
+    .timeline-time {
+      min-width: 150px;
       font-weight: bold;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .timeline-content {
+      flex-grow: 1;
+    }
+
+    .event-title {
       font-size: 1.3rem;
-      margin-bottom: 5px;
-    }
-    .event-time {
-      font-style: italic;
       margin-bottom: 10px;
+      font-weight: bold;
     }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #2f3e46;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
     a {
       color: #2f3e46;
       text-decoration: underline;
     }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .timeline-event {
+        flex-direction: column;
+      }
+
+      .timeline-time {
+        margin-bottom: 10px;
+      }
+    }
   </style>
 </head>
 <body>
-
-<nav style="background: #2f3e46; padding: 20px 0; text-align: center;">
-  <div style="max-width: 1000px; margin: auto;">
-    <a href="home.html" style="color:white; text-decoration: underline; font-size: 1.5rem; font-family: 'Playfair Display', serif; margin-right: 30px;">Aryn & Austin</a>
-    <a href="home.html" style="color:white; margin: 0 15px;">Home</a>
-    <a href="our-wedding.html" style="color:white; margin: 0 15px;">Our Wedding</a>
-    <a href="itinerary.html" style="color:white; margin: 0 15px;">Itinerary</a>
-    <a href="travel-suggestions.html" style="color:white; margin: 0 15px;">Travel Suggestions</a>
-    <a href="gallery.html" style="color:white; margin: 0 15px;">Gallery</a>
-    <a href="form.html" style="color:white; margin: 0 15px;">RSVP</a>
-    <a href="faq.html" style="color:white; margin: 0 15px;">FAQ</a>
-  </div>
-</nav>
-
-<div class="itinerary-container">
-  <div class="day">
-    <h3>FRIDAY, JANUARY 30th, 2026</h3>
-    <div class="event">
-      <div class="event-left">
-        <div class="event-title">🎉 Welcome Fiesta at Arda</div>
-        <div class="event-time">6:00 PM – 9:00 PM</div>
+  <div class="timeline-container">
+    <div class="timeline-day">
+      <h2 class="timeline-date">Friday, January 30th, 2026</h2>
+      <div class="timeline-event">
+        <div class="timeline-time">6:00 PM – 9:00 PM</div>
+        <div class="timeline-content">
+          <div class="event-title">🎉 Welcome Fiesta at Arda</div>
+          <p><strong>Location:</strong><br>
+            Arda, Mexico City<br>
+            San Luis 155, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX
+          </p>
+          <a class="map-button" href="https://maps.google.com/?q=Arda+Mexico+City" target="_blank">View on Map</a>
+          <p><strong>Attire:</strong><br>
+            Cocktail or Dressy Casual — just don’t look like a slob :)
+          </p>
+          <p><strong>Details:</strong></p>
+          <ul>
+            <li>Join us to kick off the weekend!</li>
+            <li>Cocktails and passed bites will be served.</li>
+          </ul>
+        </div>
       </div>
-      <div class="event-right">
-        <p><strong>Location:</strong><br>
-          <a href="https://maps.google.com/?q=Arda+Mexico+City" target="_blank">
-            Arda, Mexico City
-          </a><br>
-          San Luis 155, Roma Nte., Cuauhtémoc, 06700 Ciudad de México, CDMX, Mexico
-        </p>
-        <p><strong>Attire:</strong><br>
-          Cocktail or Dressy Casual — just don’t look like a slob :)
-        </p>
-        <p><strong>Details:</strong></p>
-        <ul>
-          <li>Join us to kick off the weekend!</li>
-          <li>Cocktails and passed bites will be served.</li>
-        </ul>
+    </div>
+
+    <div class="timeline-day">
+      <h2 class="timeline-date">Saturday, January 31st, 2026</h2>
+      <div class="timeline-event">
+        <div class="timeline-time">5:00 PM – 11:00 PM</div>
+        <div class="timeline-content">
+          <div class="event-title">💍 Wedding & Reception at Liverpool 76</div>
+          <p><strong>Location:</strong><br>
+            Liverpool 76, Mexico City<br>
+            Liverpool 76 in Júarez, Mexico City
+          </p>
+          <a class="map-button" href="https://maps.google.com/?q=Liverpool+76+Mexico+City" target="_blank">View on Map</a>
+          <p><strong>Attire:</strong><br>
+            Black-Tie
+          </p>
+          <p><strong>Evening Schedule:</strong></p>
+          <ul>
+            <li><strong>5:00 PM:</strong> Arrive and Mingle</li>
+            <li><strong>5:30 PM:</strong> Ceremony</li>
+            <li><strong>6:00 PM:</strong> Cocktail Hour</li>
+            <li><strong>7:00 PM:</strong> Family Style Dinner</li>
+            <li><strong>8:00 PM:</strong> Reception and Late Night Bite + Dessert</li>
+            <li><strong>11:00 PM:</strong> Reception ends and moves to after party!</li>
+          </ul>
+          <p><strong>Notes:</strong></p>
+          <ul>
+            <li>Celebrate our wedding ceremony followed by food, drinks, and dancing.</li>
+            <li>Open bar throughout the night!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-day">
+      <h2 class="timeline-date">Sunday, February 1st, 2026</h2>
+      <div class="timeline-event">
+        <div class="timeline-time">11:00 PM – Late</div>
+        <div class="timeline-content">
+          <div class="event-title">🍾 After Party at Departamento</div>
+          <p><strong>Location:</strong><br>
+            Departamento<br>
+            Álvaro Obregón #154, Colonia Roma, CDMX
+          </p>
+          <a class="map-button" href="https://www.departamento.tv/" target="_blank">View on Map</a>
+          <p><strong>Vibe:</strong><br>
+            Keep the party going at this cool bar/club
+          </p>
+          <p><strong>Details:</strong></p>
+          <ul>
+            <li>End the night with music, drinks, and dancing until late.</li>
+            <li>Make sure you get a wristband before you leave the wedding.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="day">
-    <h3>SATURDAY, JANUARY 31st, 2026</h3>
-    <div class="event">
-      <div class="event-left">
-        <div class="event-title">💍 Wedding & Reception at Liverpool 76</div>
-        <div class="event-time">5:00 PM – 11:00 PM</div>
-      </div>
-      <div class="event-right">
-        <p><strong>Location:</strong><br>
-          <a href="https://maps.google.com/?q=Liverpool+76+Mexico+City" target="_blank">
-            Liverpool 76, Mexico City
-          </a><br>
-          Liverpool 76 in Júarez, Mexico City
-        </p>
-        <p><strong>Attire:</strong><br>
-          Black-Tie
-        </p>
-        <p><strong>Evening Schedule:</strong></p>
-        <ul>
-          <li><strong>5:00 PM:</strong> Arrive and Mingle</li>
-          <li><strong>5:30 PM:</strong> Ceremony</li>
-          <li><strong>6:00 PM:</strong> Cocktail Hour</li>
-          <li><strong>7:00 PM:</strong> Family Style Dinner</li>
-          <li><strong>8:00 PM:</strong> Reception and Late Night Bite + Dessert</li>
-          <li><strong>11:00 PM:</strong> Reception ends and moves to after party!</li>
-        </ul>
-        <p><strong>Notes:</strong></p>
-        <ul>
-          <li>Celebrate our wedding ceremony followed by food, drinks, and dancing.</li>
-          <li>Open bar throughout the night!</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <div class="day">
-    <h3>SATURDAY, JANUARY 31st, 2026</h3>
-    <div class="event">
-      <div class="event-left">
-        <div class="event-title">🍾 After Party at Departamento</div>
-        <div class="event-time">11:00 PM – Late</div>
-      </div>
-      <div class="event-right">
-        <p><strong>Location:</strong><br>
-          <a href="https://www.departamento.tv/" target="_blank">
-            Departamento
-          </a><br>
-          Álvaro Obregón #154, Colonia Roma, CDMX
-        </p>
-        <p><strong>Vibe:</strong><br>
-          Keep the party going at this cool bar/club
-        </p>
-        <p><strong>Details:</strong></p>
-        <ul>
-          <li>End the night with music, drinks, and dancing until late.</li>
-          <li>Make sure you get a wristband before you leave the wedding.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<footer>
-  <p style="text-align:center; padding: 30px 10px;">With love from Aryn & Austin — We can't wait to celebrate with you 💚</p>
-</footer>
+  <footer>
+    <p>With love from Aryn & Austin — We can't wait to celebrate with you 💚</p>
+  </footer>
 </body>
 </html>
