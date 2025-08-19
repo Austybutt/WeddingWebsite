@@ -5,29 +5,58 @@
   <title>Travel Suggestions – Aryn & Austin</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
   <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f9f9f9;
+      color: #2f3e46;
+    }
+
+    nav {
+      background: #2f3e46;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    nav .brand {
+      font-size: 1.5rem;
+      text-decoration: underline;
+      margin-right: 30px;
+    }
+
     .travel-block {
       max-width: 900px;
       margin: 60px auto;
       background: #ffffffdd;
       padding: 30px;
       border-radius: 10px;
-      font-family: 'Playfair Display', serif;
-      color: #2f3e46;
     }
+
     .section {
       margin-bottom: 50px;
       text-align: center;
     }
+
     .section h2 {
       font-size: 1.4rem;
       margin-bottom: 10px;
       text-transform: uppercase;
     }
+
     .section p {
       font-size: 1.1rem;
       margin-bottom: 10px;
     }
+
     .button {
       background-color: #2f3e46;
       color: white;
@@ -37,29 +66,36 @@
       text-decoration: none;
       font-size: 1rem;
       display: inline-block;
-      margin-top: 10px;
+      margin: 10px 5px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 1rem;
     }
   </style>
 </head>
+
 <body>
-  <nav style="background: #2f3e46; padding: 20px 0; text-align: center;">
+  <!-- Navigation Bar -->
+  <nav>
     <div style="max-width: 1000px; margin: auto;">
-      <a href="home.html"
-         style="color:white; text-decoration: underline; font-size: 1.5rem; font-family: 'Playfair Display', serif; margin-right: 30px;">
-        Aryn & Austin
-      </a>
-      <a href="home.html" style="color:white; margin: 0 15px;">Home</a>
-      <a href="our-wedding.html" style="color:white; margin: 0 15px;">Our Wedding</a>
-      <a href="itinerary.html" style="color:white; margin: 0 15px;">Itinerary</a>
-      <a href="travel-suggestions.html" style="color:white; margin: 0 15px;">Travel Suggestions</a>
-      <a href="gallery.html" style="color:white; margin: 0 15px;">Gallery</a>
-      <a href="form.html" style="color:white; margin: 0 15px;">RSVP</a>
-      <a href="faq.html" style="color:white; margin: 0 15px;">FAQ</a>
+      <a href="home.html" class="brand">Aryn & Austin</a>
+      <a href="home.html">Home</a>
+      <a href="our-wedding.html">Our Wedding</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="travel-suggestions.html">Travel Suggestions</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="form.html">RSVP</a>
+      <a href="faq.html">FAQ</a>
     </div>
   </nav>
 
+  <!-- Main Travel Content -->
   <div class="travel-block fade-in-up delay-2">
 
+    <!-- Flying In -->
     <div class="section">
       <h2>✈️ Flying into Mexico City</h2>
       <p>
@@ -68,6 +104,7 @@
       </p>
     </div>
 
+    <!-- Transportation -->
     <div class="section">
       <h2>🚕 Transportation</h2>
       <p>
@@ -76,19 +113,20 @@
       </p>
     </div>
 
+    <!-- Where to Stay -->
     <div class="section">
       <h2>🏨 Where to Stay</h2>
       <p>
         We recommend Condesa, Roma, Roma Nte., Hipódromo or Juárez—these neighborhoods
-        are safe and walking‑distance to most of the wedding events. Parque España, Parque México
-        and Plaza Río de Janeiro are great landmarks to search around for hotels.
+        are safe and walking‑distance to most of the wedding events.
       </p>
       <p>
-     See below for suggested hotels and group rates.
+        Parque España, Parque México and Plaza Río de Janeiro are great landmarks to search around for hotels.
       </p>
+      <p>See below for suggested hotels and group rates.</p>
     </div>
 
-    <!-- Four Points by Sheraton -->
+    <!-- Hotel 1: Sheraton -->
     <div class="section">
       <h2>🏨 Four Points by Sheraton Mexico City, Colonia Roma</h2>
       <p>
@@ -96,22 +134,15 @@
         Ciudad de México, CDMX 06700
       </p>
       <p>
-        Approximately a 15‑minute walk or 5‑minute drive to Liverpool 76. Limited number of rooms and need to be booked by Nov. 21st. 
+        Approximately a 15‑minute walk or 5‑minute drive to Liverpool 76.<br>
+        Limited number of rooms and need to be booked by Nov. 21st.
       </p>
       <p><strong>Nightly Rate:</strong> $155 USD</p>
-      <a class="button"
-         href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1753723577443&key=GRP&app=resvlink"
-         target="_blank">
-        Book at Marriott
-      </a>
-      <a class="button"
-         href="https://maps.google.com/?q=Álvaro+Obregón+38,+Col.+Roma,+CDMX"
-         target="_blank">
-        View on Map
-      </a>
+      <a class="button" href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1753723577443&key=GRP&app=resvlink" target="_blank">Book at Marriott</a>
+      <a class="button" href="https://maps.google.com/?q=Álvaro+Obregón+38,+Col.+Roma,+CDMX" target="_blank">View on Map</a>
     </div>
 
-    <!-- ONTO Álvaro Obregón -->
+    <!-- Hotel 2: ONTO -->
     <div class="section">
       <h2>🏨 ONTO Álvaro Obregón</h2>
       <p>
@@ -119,31 +150,23 @@
         Ciudad de México, CDMX 06700
       </p>
       <p>
-        Approximately a 15‑minute walk or 5‑minute drive to Liverpool 76. Link to Code Coming Soon.
+        Approximately a 15‑minute walk or 5‑minute drive to Liverpool 76.<br>
+        Link to Code Coming Soon.
       </p>
-      <a class="button"
-         href="https://maps.google.com/?q=Álvaro+Obregón+151,+Roma+Nte,+CDMX"
-         target="_blank">
-        View on Map
-      </a>
+      <a class="button" href="https://maps.google.com/?q=Álvaro+Obregón+151,+Roma+Nte,+CDMX" target="_blank">View on Map</a>
     </div>
 
+    <!-- Airbnbs -->
     <div class="section">
       <h2>🏘️ Airbnbs in the Area</h2>
       <p>Great &amp; reliable options across CDMX.</p>
-      <a class="button"
-         href="https://www.airbnb.com/s/Mexico-City--Mexico/homes"
-         target="_blank">
-        Explore Airbnbs
-      </a>
+      <a class="button" href="https://www.airbnb.com/s/Mexico-City--Mexico/homes" target="_blank">Explore Airbnbs</a>
     </div>
-
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p style="text-align:center; padding: 30px 10px;">
-      With love from Aryn & Austin — We can't wait to celebrate with you 💚
-    </p>
+    <p>With love from Aryn & Austin — We can't wait to celebrate with you 💚</p>
   </footer>
 </body>
 </html>
