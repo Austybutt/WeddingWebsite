@@ -1,81 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home – ❤️ Aryn & Austin ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        nav {
-            background: #2f3e46;
-            text-align: center;
-            padding: 20px 0;
-        }
-        nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.1rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #a3c9a8;
-        }
-    </style>
-</head>
-<body>
+import { MapPin, Heart, PartyPopper } from 'lucide-react';
 
-<nav style="background: #2f3e46; padding: 20px 0; text-align: center;">
-  <div style="max-width: 1000px; margin: auto;">
-    <a href="home.html" style="color:white; text-decoration: underline; font-size: 1.5rem; font-family: 'Playfair Display', serif; margin-right: 30px;">Aryn & Austin</a>
-    <a href="home.html" style="color:white; margin: 0 15px;">Home</a>
-    <a href="our-wedding.html" style="color:white; margin: 0 15px;">Our Wedding</a>
-    <a href="itinerary.html" style="color:white; margin: 0 15px;">Itinerary</a>
-    <a href="travel-suggestions.html" style="color:white; margin: 0 15px;">Travel Suggestions</a>
-    <a href="gallery.html" style="color:white; margin: 0 15px;">Gallery</a>
-    <a href="form.html" style="color:white; margin: 0 15px;">RSVP</a>
-    <a href="faq.html" style="color:white; margin: 0 15px;">FAQ</a>
-  </div>
-</nav>
-    
-<header class="hero" style="text-align: center;">
-    <h1>ARYN & AUSTIN</h1>
-    <p>January 31st, 2026 · Mexico City</p>
+const essentialPlaces = [
+  {
+    category: 'Wedding Events',
+    icon: Heart,
+    color: 'text-rose-500',
+    bgColor: 'bg-rose-50',
+    borderColor: 'border-rose-200',
+    items: [
+      {
+        name: 'Welcome Fiesta',
+        venue: 'Sobremesa',
+        address: 'Puebla 135, Colonia Juárez',
+        date: 'Friday, Jan 30 • 6–9 PM',
+        dressCode: 'Festive Cocktail',
+        note: 'Doors open at 6pm sharp • Light bites & open bar • No shuttle provided',
+        mapsUrl: 'https://maps.google.com/?q=Sobremesa+Puebla+135+CDMX',
+        icon: PartyPopper,
+      },
+      {
+        name: 'Ceremony & Reception',
+        venue: 'Liverpool 76',
+        address: 'Liverpool 76, Juárez, 06600',
+        date: 'Saturday, Jan 31 • 4–11 PM',
+        dressCode: 'Black Tie',
+        note: 'Shuttles depart from Four Points Sheraton • 4pm Ceremony • Cocktail Hour • Dinner • Reception',
+        mapsUrl: 'https://maps.google.com/?q=Liverpool+76+Juarez+CDMX',
+        icon: Heart,
+      },
+    ],
+  },
+];
 
-    <!-- ✅ Small Image Inserted Here -->
-    <div style="margin: 20px 0;">
-        <img src="images/IMG_8290_VSCO.JPG" alt="Aryn and Austin" style="max-width: 250px; height: auto; border-radius: 10px;">
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#f8f6f1] to-[#f0ebe3] text-[#2d4a47]">
+      {/* Header */}
+      <header className="bg-[#2d4a47] text-white py-8 px-6 text-center">
+        <p className="text-amber-400/80 text-xs font-medium tracking-[0.3em] uppercase mb-2">January 30–31, 2026 • Mexico City</p>
+        <h1 className="font-serif text-4xl md:text-5xl tracking-wide">Aryn & Austin</h1>
+        <p className="text-white/50 text-sm mt-2">Your pocket guide to the wedding weekend</p>
+      </header>
+
+      {/* Map Section */}
+      <section className="w-full">
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1UnIb6PDCzascF3zmTompFOetZe_4oVc"
+          className="w-full h-[300px] border-0"
+          title="Wedding venues map"
+          loading="lazy"
+        />
+      </section>
+
+      {/* Main Content */}
+      <main className="max-w-2xl mx-auto px-4 py-8 space-y-8">
+        {essentialPlaces.map((section) => (
+          <section key={section.category} className="space-y-4">
+            <div className="flex items-center gap-2">
+              <section.icon className={`w-5 h-5 ${section.color}`} />
+              <h2 className="font-serif text-xl text-[#2d4a47]">{section.category}</h2>
+            </div>
+            
+            <div className="space-y-3">
+              {section.items.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`block ${section.bgColor} ${section.borderColor} border rounded-xl p-4 hover:shadow-md transition-shadow`}
+                >
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-[#2d4a47]">{item.name}</h3>
+                      <p className={`text-sm ${section.color} font-medium`}>{item.venue}</p>
+                      <p className="text-xs text-gray-500 mt-1">{item.address}</p>
+                      {'date' in item && (
+                        <p className="text-sm text-[#2d4a47] mt-2 font-medium">{item.date}</p>
+                      )}
+                      {'dressCode' in item && (
+                        <p className="text-xs text-gray-600 mt-0.5">Dress: {item.dressCode}</p>
+                      )}
+                      {'note' in item && (
+                        <p className="text-xs text-gray-600 mt-1 italic">{item.note}</p>
+                      )}
+                    </div>
+                    <MapPin className="w-4 h-4 text-gray-400 flex-shrink-0 mt-1" />
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-[#2d4a47] text-white py-6 px-6 text-center">
+        <p className="font-serif text-xl">See you in México! 🇲🇽</p>
+        <p className="text-white/50 text-xs mt-2">Aryn & Austin • January 30-31, 2026</p>
+      </footer>
     </div>
+  );
+};
 
-    <div id="countdown"></div>
-    <a href="form.html" class="rsvp-button">RSVP</a>
-</header>
+export default Index;
 
-<script>
-    const countdown = document.getElementById("countdown");
-    const weddingDate = new Date("January 31, 2026 17:00:00").getTime();
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-        if (distance < 0) {
-            countdown.innerHTML = `<h3 style="font-family: 'Playfair Display', serif;">The party has started! 🎉</h3>`;
-            return;
-        }
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        countdown.innerHTML = `<h3 style="font-family: 'Playfair Display', serif;">${days}d ${hours}h ${minutes}m ${seconds}s until the party 🎊</h3>`;
-    }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-</script>
-    
-<footer>
-    With love from Aryn & Austin — We can't wait to celebrate with you 💚
-</footer>
-
-</body>
-</html>
